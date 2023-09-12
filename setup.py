@@ -7,8 +7,8 @@ def readme():
 
 
 configuration = {
-    "name": "fastkde",
-    "version": "0.1.1",
+    "name": "polyexpkde",
+    "version": "0.1.2",
     "description": "Fast KDE with polynomial-exponential kernel",
     "long_description": readme(),
     "classifiers": [
@@ -29,12 +29,12 @@ configuration = {
         "Programming Language :: Python :: 3.8",
     ],
     "keywords": "KDE, kernel density estimation",
-    "url": "http://github.com/calvinmccarter/fastkde",
+    "url": "http://github.com/calvinmccarter/polyexpkde",
     "author": "Calvin McCarter",
     "author_email": "mccarter.calvin@gmail.com",
     "maintainer": "Calvin McCarter",
     "maintainer_email": "mccarter.calvin@gmail.com",
-    "packages": ["fastkde"],
+    "packages": ["polyexpkde"],
     "install_requires": [
         "numba >= 0.48",
         "numpy",

@@ -157,7 +157,7 @@ def ksum_numba(x, y, x_eval, h, betas, output, counts, coefs, Ly, Ry):
         for i in range(n_eval):
             ix = np.round(counts[i])
             if ix == 0:
-                exp_mult = np.exp((x_eval[i] - x[0]) / h)
+                exp_mult = max(np.exp((x_eval[i] - x[0]) / h), K_EPS)
                 output[i] += (
                     betas[orddo] * np.power(x[0] - x_eval[i], orddo) 
                     / denom * exp_mult * y[0]
@@ -172,7 +172,7 @@ def ksum_numba(x, y, x_eval, h, betas, output, counts, coefs, Ly, Ry):
                 for j in range(orddo + 1):
                     output[i] += betas[orddo] * coefs[j] * (
                         np.power(x_eval[i], orddo - j) * Ly[j, ix - 1] * exp_mult
-                        + np.power(-x_eval[i], orddo - j) * Ry[j, ix - 1] / max(exp_mult, 1e-300)
+                        + np.power(-x_eval[i], orddo - j) * Ry[j, ix - 1] / exp_mult
                     ) / denom
 
 

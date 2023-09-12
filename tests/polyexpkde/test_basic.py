@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 import scipy.stats as spst
 
-from fastkde import PolyExpKernelDensity
+from polyexpkde import PolyExpKernelDensity
 
 
 def test_gaussian_approx():

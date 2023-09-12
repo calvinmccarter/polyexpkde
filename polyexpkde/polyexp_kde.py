@@ -9,7 +9,7 @@ from sklearn.utils.validation import (
     check_random_state,
 )
 
-from fastkde.ksum import (
+from polyexpkde.ksum import (
     kernel_eval,
     kernel_density,
 )
